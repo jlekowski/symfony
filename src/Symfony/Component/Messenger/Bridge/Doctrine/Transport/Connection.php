@@ -167,6 +167,7 @@ class Connection implements ResetInterface
         try {
             $query = $this->createAvailableMessagesQueryBuilder()
                 ->orderBy('available_at', 'ASC')
+                ->addOrderBy('id', 'ASC')
                 ->setMaxResults(1);
 
             // use SELECT ... FOR UPDATE to lock table
